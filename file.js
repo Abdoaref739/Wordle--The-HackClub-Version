@@ -6,6 +6,12 @@ let btn4 = document.getElementById("btn4");
 let btn5 = document.getElementById("btn5");
 let boxes = document.querySelectorAll(".box");
 let try_again_button = document.getElementById("try-again-button");
+let settings_icon = document.getElementById("settings-icon");
+let forest_theme = document.getElementById("forest-theme");
+let cave_theme = document.getElementById("cave-theme");
+let game_div = document.getElementById("game-div");
+let main_text = document.getElementById("main-text");
+let hr_line = document.getElementById("hr-line");
 
     boxes.forEach(box =>{
    if(box.innerHTML == ""){
@@ -126,3 +132,24 @@ console.log(merged_btns_data)
 }
     })
  }
+ settings_icon.onclick = function(){
+    window.location.href = "./settings.html";
+ }
+function change_theme(){
+    let theme_status = localStorage.getItem("theme");
+    if(theme_status === "cave theme"){
+        forest_theme.style.display = "none";
+        cave_theme.style.display = "block";
+        game_div.style.marginLeft = "350px";
+        try_again_button.style.marginLeft = "220px";
+        main_text.style.marginLeft = "470px";
+        hr_line.style.marginLeft = "580px";
+        settings_icon.style.marginLeft = "900px";
+        
+    }
+    else if(theme_status === "forest theme"){
+        forest_theme.style.display = "block";
+        cave_theme.style.display = "none";
+    }
+}
+change_theme();

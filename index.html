@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wordle - Hackclub version</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header>
+    <header id="header">
+        <i class="fa-solid fa-gear" id="settings-icon"></i>
         <h1 id="main-text">Wordle - Hackclub version</h1>
         <div id="hr-line"></div>
     </header>
@@ -22,12 +24,25 @@
             </div>
             <button id="try-again-button">Try Again!</button>
         </section>
+        <div id="forest-theme">
         <img src="./themes/mountains themes/far-mountains.png" id="far-mountains">
         <img src="./themes/mountains themes/far-trees.png" id="far-trees">
         <img src="./themes/mountains themes/middle-mountains.png" id="middle-mountain">
         <img src="./themes/mountains themes/myst.png" id="myst">
         <img src="./themes/mountains themes/near-trees.png" id="near-trees">
         <img src="./themes/mountains themes/sky.png" id="sky">
-        <script src="file.js"></script>
+        </div>
+
+
+                <div id="cave-theme">
+        <img src="./themes/cave theme/1.png" id="layer1">
+                <img src="./themes/cave theme/2.png" id="layer2">
+        <img src="./themes/cave theme/3.png" id="layer3">
+        <img src="./themes/mountains themes/myst.png" id="layer4">
+        <img src="./themes/cave theme/5.png" id="layer5">
+        <img src="./themes/cave theme/6.png" id="layer6">
+        <img src="./themes/cave theme/7.png" id="layer7">
+        </div>
+        <script src="./file.js"></script>
 </body>
 </html>

@@ -6,38 +6,67 @@
 body{
   display: flex;
   justify-content: center;
-  overflow: hidden;
-  background-color: #f0f0f0;
+  background-image: url("./themes/mountains\ themes/orig_big.png");
+  background-size: cover;
 }
 #header{
-  position: relative;
   margin-top: 50px;
   z-index: 1005;
 }
 #settings-icon{
-  position: absolute;
   font-size: 25px;
-  margin-top: 110px;
-  margin-left: 600px;
   cursor: pointer;
-    color: #333;
+    color: #ffffff;
+    margin-top: 0px;
+    margin-left: 100%;
 }
 #main-text{
-  position: absolute;
   text-align: center;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #333;
-  margin-top: 100px;
-  margin-left: 180px;
+  color: #ffffff;
   width: 400px;
+  margin-left: 0%;
 }
 #hr-line{
-  position: absolute;
   width: 200px;
   height: 1px;
-  background-color: rgb(53, 53, 53);
-  margin-top: 150px; 
-  margin-left: 270px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 15px;
+  margin-left: 25%;
+}
+#hearts-div{
+  width: 200px;
+  height: 50px;
+  z-index: 0;
+  margin-left: 30%;
+  margin-top: 40px;
+}
+#powerups-div{
+  margin-left: 30%;
+  margin-top: 10px;
+}
+#add-hint{
+  width: 50px;
+  height: 50px;
+  z-index: 0;
+  cursor: pointer;
+
+}
+#add-two-hints{
+  width: 50px;
+  height: 50px;
+  z-index: 0;
+  cursor: pointer;
+}
+#change-the-word{
+  width: 50px;
+  height: 50px;
+  z-index: 0;
+  cursor: pointer;
+}
+.full-heart{
+  width:50px;
+  height: 50px;
 }
 .row{
     display: grid;
@@ -56,68 +85,22 @@ body{
   cursor: pointer;
 
 }
+.hint-sentence{
+  position: absolute;
+  margin-top: 140px;
+  margin-left: 15%;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #ffffff;
+}
 #game-div{
+  position: absolute;
   display: flex;
   flex-direction: row;
-position: relative;
-  margin-top:280px;
-  margin-left: 50px;
   z-index: 4;
+  margin-top: 350px;
+  margin-left: -40%;
 }
-#far-mountains{
-  position: absolute;
-  width: 100%;
-  height: 500px;
-  margin-left: -282px;
-  margin-top: -221px;
-
-}
-#far-trees{
-  position: absolute;
-  width: 100%;
-  height: 500px;
-  margin-left: -282px;
-  margin-top: -221px;
-  z-index: 2;
-
-}
-#middle-mountain{
-    position: absolute;
-  width: 100%;
-  height: 500px;
-  margin-left: -282px;
-  margin-top: -221px;
-  z-index: 1;
-}
-#myst{
-      position: absolute;
-  width: 100%;
-  height: 500px;
-  margin-left: -282px;
-  margin-top: -160px;
-  z-index: 3;
-}
-#near-trees{
-        position: absolute;
-  width: 100%;
-  height: 500px;
-  margin-left: -282px;
-  margin-top: -200px;
-  z-index: 2;
-}
-#sky{
-  position: absolute;
-  width: 100%;
-  height: 800px;
-  margin-left: -282px;
-  margin-top: -390px;
-  z-index: -2;
-}
-
-
-
 #cave-theme{
-  position: relative;
   display: none;
     width: 100%;
     height: 100%;
@@ -125,60 +108,27 @@ position: relative;
     z-index: 1;
 }
 
-#layer1{
-  position: absolute;
-  width: 100%;
-  height: 500px;
-  margin-top: 120px;
 
-}
-#layer2{
+#another-word-button{
+  display: none;
     position: absolute;
-  width: 100%;
-  height: 850px;
-  z-index: 1;
-  margin-top: 0px;
+  width: 250px;
+  height: 80px;
+  background-color: rgb(0, 225, 255);
+  font-size: 20px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: 1px solid rgb(0, 191, 197);
+  border-radius: 8px;
+  border-bottom: 8px solid rgb(0, 191, 197);
+  z-index: 5px;
+  cursor: pointer;
+  margin-top: 200px;
+  margin-left: 30%;
 }
-#layer3{
-    position: absolute;
-  width: 100%;
-  height: 750px;
-  z-index: 2;
-  margin-top: 350px;
-
+#another-word-button:hover{
+  border-bottom: 2px solid rgb(0, 191, 197);
+transition: 0.7s ease;
 }
-
-#layer4{
-    position: absolute;
-  width: 100%;
-  height: 750px;
-  z-index: 3;
-  margin-top: 350px;
-}
-#layer5{
-    position: absolute;
-  width: 100%;
-  height: 750px;
-  z-index: 4;
-  margin-top: 240px;
-}
-#layer6{
-    position: relative;
-  width: 100%;
-  height: 900px;
-  z-index: 5;
-  margin-top: -100px;
-}
-#layer7{
-    position: relative;
-  width: 100%;
-  height: 250px;
-  z-index: 1004;
-  margin-top: -200px;
-}
-
-
-
 #try-again-button{
   position: absolute;
   width: 250px;
@@ -191,86 +141,40 @@ position: relative;
   border-bottom: 8px solid orangered;
   z-index: 5px;
   cursor: pointer;
-  margin-top: 230px;
-  margin-left: 220px;
+  margin-top: 200px;
+  margin-left: 30%;
 }
 #try-again-button:hover{
 border-bottom: 2px solid orangered;
 transition: 0.7s ease;
 }
-@media (max-width: 800px){
-  #main-text{
-    margin-top: 50px;
-    margin-left: -120px;
-  }
-  .box{
-    width:80px;
-    height: 80px;
-  }
-  #hr-line{
-    margin-top: 90px;
-    margin-left: -20px;
-  }
-.row{
-  flex-direction: column;
-  grid-template-columns: 1fr;
-  gap: 15px;
-  margin-top: -100px;
-  margin-left: -20px;
-}
-
-
-#far-mountains{
-  margin-left: -192px;
-  margin-top: -250px;
-
-}
-#far-trees{
-  position: absolute;
+#leaves{
   width: 100%;
-  height: 500px;
-  margin-left: -292px;
-  margin-top: 121px;
-  z-index: 2;
-
-}
-#middle-mountain{
-  width: 100%;
-  height: 500px;
-  margin-left: -193px;
-  margin-top: -350px;
+  height: 100%;
+  z-index: 1005;
+  margin-top: -700px;
+  margin-left: 0px;
   z-index: 1;
 }
-#myst{
-  margin-left: -192px;
-  margin-top: -420px;
-}
-#near-trees{
-  margin-left: -192px;
-  margin-top: -450px;
-}
-#sky{
-  height: 500px;
-  margin-left: -193px;
-  margin-top: -600px;
-}
-#try-again-button{
+
+@media (max-width: 750px){
+  body{
+    background-size: 1200px 900px;
+    background-position: -50px -150px;
+  }
+
+#game-div{
   position: absolute;
-  width: 80px;
-  height: 250px;
-  background-color: rgb(255, 175, 101);
-  font-size: 20px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  border: 1px solid orangered;
-  border-radius: 8px;
-  border-bottom: 8px solid orangered;
-  z-index: 5px;
-  cursor: pointer;
-  margin-top: 0px;
-  margin-left: 120px;
+  display: flex;
+  flex-direction: row;
+  z-index: 4;
+  margin-top: 350px;
+  margin-left: -40%;
 }
-#try-again-button:hover{
-border-bottom: 2px solid orangered;
-transition: 0.7s ease;
+  .row{
+    display: grid;
+  grid-template-rows: 100px;
+  gap: 1px;
+
 }
 }

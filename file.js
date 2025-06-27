@@ -12,11 +12,24 @@ let cave_theme = document.getElementById("cave-theme");
 let game_div = document.getElementById("game-div");
 let main_text = document.getElementById("main-text");
 let hr_line = document.getElementById("hr-line");
+let full_heart1 = document.getElementById("full-heart1");
+let full_heart2 = document.getElementById("full-heart2");
+let full_heart3 = document.getElementById("full-heart3");
+let another_word_button = document.getElementById("another-word-button");
+let add_hint_button = document.getElementById("add-hint");
+let add_two_hints_button = document.getElementById("add-two-hints");
+let change_the_word_button = document.getElementById("change-the-word");
+let leaves = document.getElementById("leaves");
+
+
+
+
 
     boxes.forEach(box =>{
-   if(box.innerHTML == ""){
+   if(box.innerHTML === ""){
     box.style.backgroundColor = "rgb(255, 253, 163)";
-}else if(box.innerHTML != ""){
+}
+if(box.innerHTML !== ""){
     box.style.backgroundColor = "rgb(255, 255, 255)";
 }
     })
@@ -72,27 +85,92 @@ window.onload = function() {
     }
 }
 
-
-
  let i;
  let j;
  let the_choosen_word;
-let words_list = [  "hacks", "clubs", "bytes", "coder", "debug", "input", "logic", "array",
-  "loops", "stack", "queue", "build", "maker", "create", "react", "async",
-  "await", "merge", "issue", "fixes", "patch", "class", "const", "error",
-  "alert", "click", "print", "parse", "reset", "shift", "alert", "event",
-  "style", "color", "align", "fetch", "posts", "pages", "links", "media",
-  "image", "video", "route", "props", "state", "theme", "align", "fonts",
-  "popup", "modal", "entry", "token", "email", "login", "admin", "users",
-  "shell", "zshrc", "vscode", "https", "array", "float", "intjs", "nodes",
-  "fiber", "clock", "count", "clear", "level", "pixel", "draws", "games",
-  "click", "hover", "focus", "input", "valid", "toast", "timer", "hooks",
-  "dream", "squad", "event", "logic", "split", "apply", "reset", "green"];
-let random_number_word = Math.random() * (100 - 0) + 0;
+let words_list = [  "hacks", "clubs", "bytes", "allow"];
+let random_number_word = Math.random() * (4 - 0) + 0;
 let floored_number = Math.floor(random_number_word);
 console.log(floored_number)
 the_choosen_word = words_list[floored_number];
 console.log(the_choosen_word)
+
+
+
+
+
+
+another_word_button.onclick = function(){
+    another_word_button.style.display = "none";
+    try_again_button.style.display = "block";
+let random_number_word = Math.random() * (3 - 0) + 0;
+let floored_number = Math.floor(random_number_word);
+console.log(floored_number)
+the_choosen_word = words_list[floored_number];
+console.log(the_choosen_word)
+addHints();
+btn1.innerHTML = "";
+btn2.innerHTML = "";
+btn3.innerHTML = "";
+btn4.innerHTML = "";
+btn5.innerHTML = "";
+btn1.style.backgroundColor = "rgb(255, 253, 163)";
+btn2.style.backgroundColor = "rgb(255, 253, 163)";
+btn3.style.backgroundColor = "rgb(255, 253, 163)";
+btn4.style.backgroundColor = "rgb(255, 253, 163)";
+btn5.style.backgroundColor = "rgb(255, 253, 163)";
+btn1.focus();
+get_user_word();
+}
+
+
+function addHints(){
+    let hint_sentence = document.querySelector(".hint-sentence");
+if(the_choosen_word === "hacks"){
+    hint_sentence.innerHTML = `Hint: More than a single hack!`;
+}
+else if(the_choosen_word === "clubs"){
+    hint_sentence.innerHTML = `Hint: We play sports and have fun in them!`;
+}
+else if(the_choosen_word === "bytes"){
+    hint_sentence.innerHTML = "Hint: consists of a number of funny bits!";
+}
+else if(the_choosen_word === "allow"){
+    hint_sentence.innerHTML = "Hint: Giving Access to somebody for something!";
+}
+}
+addHints();
+
+
+
+ add_hint_button.onclick = function(){
+    btn1.innerHTML = the_choosen_word[0];
+    btn2.focus();
+} 
+ add_two_hints_button.onclick = function(){
+    btn2.innerHTML = the_choosen_word[1];
+    btn3.focus();
+} 
+ change_the_word_button.onclick = function(){
+    btn1.focus();
+    random_number_word = Math.random() * (3 - 0) + 0;
+floored_number = Math.floor(random_number_word);
+console.log(floored_number)
+the_choosen_word = words_list[floored_number];
+console.log(the_choosen_word)
+addHints();
+btn1.innerHTML = "";
+btn2.innerHTML = "";
+btn3.innerHTML = "";
+btn4.innerHTML = "";
+btn5.innerHTML = "";
+btn1.style.backgroundColor = "rgb(255, 253, 163)";
+btn2.style.backgroundColor = "rgb(255, 253, 163)";
+btn3.style.backgroundColor = "rgb(255, 253, 163)";
+btn4.style.backgroundColor = "rgb(255, 253, 163)";
+btn5.style.backgroundColor = "rgb(255, 253, 163)";
+   
+} 
 
 function get_user_word(){
 document.addEventListener("keydown", function(){
@@ -108,14 +186,28 @@ console.log(merged_btns_data)
         for(j = 0; j < 5; j++){
                       if(btns[j].innerHTML != the_choosen_word[j]){
         btns[j].style.backgroundColor = "red";
-    }else{
+        full_heart1.src = "./dead-heart.png";
+        if(full_heart1.src == "./dead-heart.png"){
+            full_heart2.src = "./dead-heart.png";
+        }else if(full_heart2 == "./dead-heart.png"){
+            full_heart3.src = "./dead-heart.png";
+        }
+        another_word_button.style.display = "none";
+        try_again_button.style.display = "block";
+    }
+    if(btns[j].innerHTML === the_choosen_word[j]){
         btns[j].style.backgroundColor = "lightgreen";
+        another_word_button.style.display = "block";
+        try_again_button.style.display = "none";
+
     }
 }
 }
 }
 })
  }
+
+
 
  try_again_button.onclick = function(){
     btn1.innerHTML = "";
@@ -125,9 +217,9 @@ console.log(merged_btns_data)
     btn5.innerHTML = "";
     btn1.focus();
         boxes.forEach(box =>{
-   if(box.innerHTML == ""){
+   if(box.innerHTML === ""){
     box.style.backgroundColor = "rgb(255, 253, 163)";
-}else if(box.innerHTML != ""){
+}else if(box.innerHTML !== ""){
     box.style.backgroundColor = "rgb(255, 255, 255)";
 }
     })
@@ -145,6 +237,7 @@ function change_theme(){
         main_text.style.marginLeft = "470px";
         hr_line.style.marginLeft = "580px";
         settings_icon.style.marginLeft = "900px";
+        leaves.style.display = "none";
         
     }
     else if(theme_status === "forest theme"){
